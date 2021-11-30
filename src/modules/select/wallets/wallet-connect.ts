@@ -33,7 +33,7 @@ function walletConnect(
     wallet: async (helpers: Helpers) => {
       const createProvider = (await import('./providerEngine')).default
       const { default: WalletConnectProvider } = await import(
-        '@walletconnect/web3-provider'
+        '@fuseio/walletconnect-web3-provider'
       )
 
       const { resetWalletState, networkName, getBalance } = helpers
@@ -99,11 +99,11 @@ function walletConnect(
           },
           balance: {
             get: async () => {
-              if (!provider.wc._accounts[0]) {
+              if (!provider.wc.accounts[0]) {
                 return null
               }
 
-              return getBalance(balanceProvider, provider.wc._accounts[0])
+              return getBalance(balanceProvider, provider.wc.accounts[0])
             }
           },
           disconnect: () => {

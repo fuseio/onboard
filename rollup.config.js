@@ -60,7 +60,7 @@ export default {
     'bnc-sdk',
     'bignumber.js',
     '@portis/web3',
-    '@walletconnect/web3-provider',
+    '@fuseio/walletconnect-web3-provider',
     'fortmatic',
     'authereum',
     '@toruslabs/torus-embed',
